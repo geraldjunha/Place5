@@ -55,9 +55,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements
-        ConnectionCallbacks,
-        OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implement ConnectionCallbacks, OnConnectionFailedListener {
 
     // Constants
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -65,11 +63,11 @@ public class MainActivity extends AppCompatActivity implements
     private static final int PLACE_PICKER_REQUEST = 1;
 
     // Member variables
+    private GoogleApiClient mClient;
+    private Geofencing mGeofencing;
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private boolean mIsEnabled;
-    private GoogleApiClient mClient;
-    private Geofencing mGeofencing;
 
     /**
      * Called when the activity is starting
